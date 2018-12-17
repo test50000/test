@@ -1,37 +1,405 @@
+<div class="RetweetDialog-modal modal draggable" id="retweet-tweet-dialog-dialog" role="alertdialog" aria-labelledby="retweet-tweet-dialog-header" aria-describedby="retweet-tweet-dialog-body" style="top: 20%; right: 345px;"><div class="js-first-tabstop" tabindex="0"></div>
+    <div class="modal-content" role="document">
+      
 
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="utf-8" />
-  <title>تويتر</title>
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="retweet-tweet-dialog-header">هل تريد إعادة تغريد هذا لمتابعيك؟</h3>
+      </div>
+
+        <form class="t1-form tweet-form condensed RetweetDialog-tweetForm isWithoutComment">
+          <div class="RetweetDialog-commentBox">
+            <span class="visuallyhidden" id="retweet-with-comment-label">تعليق اختياري لإعادة التغريد</span>
+            <div class="tweet-content">
+<div class="RichEditor RichEditor--emojiPicker">
+  
+  <div class="RichEditor-mozillaCursorWorkaround">&nbsp;</div>
+  <div class="RichEditor-container u-borderRadiusInherit">
+                      
+
+
+<div role="listbox" class="dropdown-menu typeahead" id="typeahead-dropdown-5">
+  <div aria-hidden="true" class="dropdown-caret">
+    <div class="caret-outer"></div>
+    <div class="caret-inner"></div>
+  </div>
+  <div role="presentation" class="dropdown-inner js-typeahead-results"><ul role="presentation" class="typeahead-items typeahead-accounts social-context js-typeahead-accounts block0" style="display: none;">
+  
+  <li role="presentation" data-user-id="" data-user-screenname="" data-remote="true" data-score="" class="typeahead-item typeahead-account-item js-selectable">
+    
+    <a role="option" class="js-nav" data-query-source="typeahead_click" data-search-query="" data-ds="account" tabindex="-1">
+      <div class="js-selectable typeahead-in-conversation hidden">
+        <span class="Icon Icon--follower Icon--small"></span>
+        <span class="typeahead-in-conversation-text">في هذه المحادثة</span>
+      </div>
+      <img class="avatar size32" alt="">
+      <span class="typeahead-user-item-info account-group">
+        <span class="fullname"></span><span class="UserBadges"><span class="Icon Icon--verified js-verified hidden"><span class="u-hiddenVisually">حساب موثّق</span></span><span class="Icon Icon--protected js-protected hidden"><span class="u-hiddenVisually">تغريدات محميّة</span></span></span><span class="UserNameBreak">&nbsp;</span><span class="username u-dir" dir="ltr">@<b></b></span>
+      </span>
+      <span class="typeahead-social-context"></span>
+    </a>
+  </li>
+  <li role="presentation" class="js-selectable typeahead-accounts-shortcut js-shortcut"><a role="option" class="js-nav" href="" data-search-query="" data-query-source="typeahead_click" data-shortcut="true" data-ds="account_search" tabindex="-1"></a></li>
+</ul><ul role="presentation" class="typeahead-items typeahead-topics block1" style="display: none;">
+  
+  <li role="presentation" class="typeahead-item typeahead-topic-item">
+    <a role="option" class="js-nav" href="" data-search-query="" data-query-source="typeahead_click" data-ds="topics" tabindex="-1"></a>
+  </li>
+</ul></div>
+</div>
+
+
+    <div class="RichEditor-scrollContainer u-borderRadiusInherit">
+                        <div aria-labelledby="retweet-with-comment-label" id="retweet-with-comment" class="tweet-box rich-editor is-showPlaceholder" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder-default="إضافة تعليق..." dir="rtl" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-5"><div><br></div></div>
+
+      <div class="RichEditor-pictographs" aria-hidden="true"></div>
+    </div>
+                      <div class="RichEditor-rightItems RichEditor-topItems">
+                    <div class="EmojiPicker dropdown is-loading" style="">
+  <button type="button" class="EmojiPicker-trigger js-dropdown-toggle js-tooltip u-textUserColorHover" title="إضافة رمز تعبيري" data-delay="150">
+    <span class="Icon Icon--smiley"></span>
+    <span class="text u-hiddenVisually">
+      إضافة رمز تعبيري
+    </span>
+  </button>
+  <div class="EmojiPicker-dropdownMenu dropdown-menu" tabindex="-1">
+    <div class="EmojiPicker-content Caret Caret--stroked"></div>
+  </div>
+</div>
+
+                  </div>
+
+                      <div class="RichEditor-rightItems RichEditor-bottomItems">
+                    <div class="js-character-counter">
+  <div class="js-countdown-counter tweet-counter CountdownCounter"></div>
+  <svg class="RadialCounter js-radial-counter" height="20" width="20">
   <style>
-  body {
-    background-color: #ffffff;
-    font-family: sans-serif;
-  }
-  a {
-    color: #1da1f2;
-  }
-  svg {
-    color: #1da1f2;
-    display: block;
-    fill: currentcolor;
-    height: 21px;
-    margin: 13px auto;
-    width: 24px;
-  }
+    /* Global svg style overrides the overflow. Added svg for specificity */
+    svg.RadialCounter {
+      margin-bottom: -4px;
+      overflow: visible;
+      transform: rotate(-90deg);
+    }
+
+    .RadialCounter--safe {
+      stroke: #1da1f2;
+    }
+
+    .RadialCounter--warn {
+      stroke: #ffad1f;
+    }
+
+    .RadialCounter--danger {
+      stroke: #e0245e;
+    }
+
+    .RadialCounter-progressUnderlay {
+      stroke: #ccd6dd;
+    }
+
+    @keyframes RadialCounterPulse {
+      0% { stroke-width:2 }
+      50% { stroke-width: 4; }
+      100% { stroke-width: 2; }
+    }
+
+    .RadialCounter--danger.RadialCounter--pulse,
+    .RadialCounter--warn.RadialCounter--pulse {
+      animation: RadialCounterPulse 0.3s ease-in-out;
+      animation-iteration-count: 1;
+    }
   </style>
-</head>
-<body>
-    <noscript>
+  <circle class="RadialCounter-progressUnderlay" cx="50%" cy="50%" r="8" fill="none" stroke-width="1"></circle>
+  <circle class="js-progress-circle RadialCounter--safe" cx="50%" cy="50%" r="8" fill="none" stroke-width="2" style="stroke-dashoffset: 50.2655; stroke-dasharray: 50.2655;">
+  </circle>
+</svg>
+
+</div>
+
+                  </div>
+
+  </div>
+  <div class="RichEditor-mozillaCursorWorkaround">&nbsp;</div>
+</div>
+            </div>
+          </div>
+
+          <div class="RetweetDialog-footer u-cf">
+            <div class="tweet-loading">
+  <div class="spinner-bigger"></div>
+</div>
+
+            <div class="RetweetDialog-tweet modal-body modal-tweet tweet disabled-links" data-tweet-stat-initialized="true" id="retweet-tweet-dialog-body">
+
+
+  <div class="tweet js-stream-tweet js-actionable-tweet js-profile-popup-actionable dismissible-content
+       original-tweet js-original-tweet
       
-      <center>إذا لم تتم إعادة توجيهك قريبًا، فيرجى <a href="https://twitter.com/ADxpzSu8eKSUcvS">استخدام هذا الرابط</a>.</center>
-    </noscript>
-    <script nonce="uIqNsTcet7fEq5onTwBtHw==">
       
-      document.cookie = "app_shell_visited=1;path=/;max-age=5";
+       has-cards  has-content
+" data-tweet-id="1074439401814532096" data-item-id="1074439401814532096" data-permalink-path="/ADxpzSu8eKSUcvS/status/1074439401814532096" data-conversation-id="1074439401814532096" data-tweet-nonce="1074439401814532096-00db81d2-4f01-447d-8ab1-69448cf8aeb2" data-tweet-stat-initialized="true" data-screen-name="ADxpzSu8eKSUcvS" data-name="ماى ايجى 2019" data-user-id="1074424952059822081" data-you-follow="true" data-follows-you="false" data-you-block="false" data-reply-to-users-json="[{&quot;id_str&quot;:&quot;1074424952059822081&quot;,&quot;screen_name&quot;:&quot;ADxpzSu8eKSUcvS&quot;,&quot;name&quot;:&quot;\u0645\u0627\u0649 \u0627\u064a\u062c\u0649 2019&quot;,&quot;emojified_name&quot;:{&quot;text&quot;:&quot;\u0645\u0627\u0649 \u0627\u064a\u062c\u0649 2019&quot;,&quot;emojified_text_as_html&quot;:&quot;\u0645\u0627\u0649 \u0627\u064a\u062c\u0649 2019&quot;}}]" data-disclosure-type="" data-has-cards="true">
+
+    <div class="context">
       
-      location.replace(location.href.split("#")[0]);
-    </script>
-</body>
-</html>
+      
+    </div>
+
+    <div class="content">
+      
+
+      
+
+      
+      <div class="stream-item-header">
+          <a class="account-group js-account-group js-action-profile js-user-profile-link js-nav" href="/ADxpzSu8eKSUcvS" data-user-id="1074424952059822081" tabindex="-1">
+      <img class="avatar js-action-profile-avatar" src="https://pbs.twimg.com/profile_images/1074442588592197633/FFXmL12h_bigger.jpg" alt="">
+    <span class="FullNameGroup">
+      <strong class="fullname show-popup-with-id u-textTruncate fullname-rtl" data-aria-label-part="">ماى ايجى 2019</strong><span>&rlm;</span><span class="UserBadges"></span><span class="UserNameBreak">&nbsp;</span></span><span class="username u-dir u-textTruncate" dir="ltr" data-aria-label-part="">@<b>ADxpzSu8eKSUcvS</b></span></a>
+
+        
+        <small class="time">
+  <a href="/ADxpzSu8eKSUcvS/status/1074439401814532096" class="tweet-timestamp js-permalink js-nav js-tooltip" title="١:٠١ ص - ١٧ ديسمبر ٢٠١٨" data-conversation-id="1074439401814532096" tabindex="-1"><span class="_timestamp js-short-timestamp js-relative-timestamp" data-time="1545001290" data-time-ms="1545001290000" data-long-form="true" aria-hidden="true">٢ س</span><span class="u-hiddenVisually" data-aria-label-part="last">قبل ساعتين</span></a>
+</small>
+
+          <div class="ProfileTweet-action ProfileTweet-action--more js-more-ProfileTweet-actions">
+    <div class="dropdown">
+  <button class="ProfileTweet-actionButton u-textUserColorHover dropdown-toggle js-dropdown-toggle" type="button">
+      <div class="IconContainer js-tooltip" title="المزيد">
+        <span class="Icon Icon--caretDownLight Icon--small"></span>
+        <span class="u-hiddenVisually">المزيد</span>
+      </div>
+  </button>
+  <div class="dropdown-menu is-autoCentered">
+  <div class="dropdown-caret">
+    <div class="caret-outer"></div>
+    <div class="caret-inner"></div>
+  </div>
+  <ul>
+    
+      <li class="copy-link-to-tweet js-actionCopyLinkToTweet">
+        <button type="button" class="dropdown-link">نسخ رابط التغريدة</button>
+      </li>
+      <li class="embed-link js-actionEmbedTweet" data-nav="embed_tweet">
+        <button type="button" class="dropdown-link">تضمين التغريدة</button>
+      </li>
+          <li class="mute-user-item"><button type="button" class="dropdown-link">كتم <span class="username u-dir u-textTruncate" dir="ltr">@<b>ADxpzSu8eKSUcvS</b></span></button></li>
+    <li class="unmute-user-item"><button type="button" class="dropdown-link">إلغاء الكتم عن <span class="username u-dir u-textTruncate" dir="ltr">@<b>ADxpzSu8eKSUcvS</b></span></button></li>
+
+        <li class="block-link js-actionBlock" data-nav="block">
+          <button type="button" class="dropdown-link">حظر <span class="username u-dir u-textTruncate" dir="ltr">@<b>ADxpzSu8eKSUcvS</b></span></button>
+        </li>
+        <li class="unblock-link js-actionUnblock" data-nav="unblock">
+          <button type="button" class="dropdown-link">إلغاء حظر <span class="username u-dir u-textTruncate" dir="ltr">@<b>ADxpzSu8eKSUcvS</b></span></button>
+        </li>
+      <li class="report-link js-actionReport" data-nav="report">
+        <button type="button" class="dropdown-link">
+          
+            
+            الإبلاغ عن تغريدة
+        </button>
+      </li>
+      <li class="dropdown-divider"></li>
+      <li class="js-actionMomentMakerAddTweetToOtherMoment MomentMakerAddTweetToOtherMoment">
+        <button type="button" class="dropdown-link">أضِف إلى لحظة أخرى</button>
+      </li>
+      <li class="js-actionMomentMakerCreateMoment">
+        <button type="button" class="dropdown-link">أضِف إلى لحظة جديدة</button>
+      </li>
+  </ul>
+</div>
+
+</div>
+
+  </div>
+
+      </div>
+
+      
+
+      
+
+
+      
+        <div class="js-tweet-text-container">
+  <p class="TweetTextSize  js-tweet-text tweet-text" lang="und" data-aria-label-part="0"><a href="https://t.co/qj5laEgFdH" class="twitter-timeline-link" data-pre-embedded="true" dir="ltr" tabindex="-1">pic.twitter.com/qj5laEgFdH</a></p>
+</div>
+
+
+      
+
+      
+            <div class="AdaptiveMediaOuterContainer">
+    <div class="AdaptiveMedia
+        AdaptiveMedia--hiddenWhenNotExpanded
+        
+        is-video
+        
+        
+        ">
+      <div class="AdaptiveMedia-container">
+          <div class="AdaptiveMedia-video">
+  <div class="AdaptiveMedia-videoContainer">
+      <div class="PlayableMedia PlayableMedia--video">
+
+
+  <div class="PlayableMedia-container">
+    <div class="PlayableMedia-player
+        
+        " data-playable-media-url="" data-use-react-player="" data-use-player-precache="" data-border-top-left-radius="" data-border-top-right-radius="" data-border-bottom-left-radius="" data-border-bottom-right-radius="" style="padding-bottom: 100.0%; background-image:url('https://pbs.twimg.com/ext_tw_video_thumb/1074438587331084289/pu/img/fkgf_IkHc4HW3CFr.jpg')">
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+      
+      
+
+      
+      <div class="stream-item-footer">
+  
+      <div class="ProfileTweet-actionCountList u-hiddenVisually">
+    
+    
+    <span class="ProfileTweet-action--reply u-hiddenVisually">
+      <span class="ProfileTweet-actionCount" aria-hidden="true" data-tweet-stat-count="0">
+        <span class="ProfileTweet-actionCountForAria" id="profile-tweet-action-reply-count-aria-1074439401814532096">٠ ردّ</span>
+      </span>
+    </span>
+    <span class="ProfileTweet-action--retweet u-hiddenVisually">
+      <span class="ProfileTweet-actionCount" aria-hidden="true" data-tweet-stat-count="0">
+        <span class="ProfileTweet-actionCountForAria" id="profile-tweet-action-retweet-count-aria-1074439401814532096">٠ إعادة تغريد</span>
+      </span>
+    </span>
+    <span class="ProfileTweet-action--favorite u-hiddenVisually">
+      <span class="ProfileTweet-actionCount" aria-hidden="true" data-tweet-stat-count="0">
+        <span class="ProfileTweet-actionCountForAria" id="profile-tweet-action-favorite-count-aria-1074439401814532096">٠ إعجاب</span>
+      </span>
+    </span>
+  </div>
+
+  <div class="ProfileTweet-actionList js-actions" role="group" aria-label="إجراءات التغريد">
+    <div class="ProfileTweet-action ProfileTweet-action--reply">
+  <button class="ProfileTweet-actionButton js-actionButton js-actionReply" data-modal="ProfileTweet-reply" type="button" aria-describedby="profile-tweet-action-reply-count-aria-1074439401814532096">
+    <div class="IconContainer js-tooltip" title="ردّ">
+      <span class="Icon Icon--medium Icon--reply"></span>
+      <span class="u-hiddenVisually">ردّ</span>
+    </div>
+      <span class="ProfileTweet-actionCount ProfileTweet-actionCount--isZero ">
+        <span class="ProfileTweet-actionCountForPresentation" aria-hidden="true"></span>
+      </span>
+  </button>
+</div>
+
+    <div class="ProfileTweet-action ProfileTweet-action--retweet js-toggleState js-toggleRt">
+  <button class="ProfileTweet-actionButton  js-actionButton js-actionRetweet" data-modal="ProfileTweet-retweet" type="button" aria-describedby="profile-tweet-action-retweet-count-aria-1074439401814532096">
+    <div class="IconContainer js-tooltip" title="إعادة تغريد">
+      <span class="Icon Icon--medium Icon--retweet"></span>
+      <span class="u-hiddenVisually">إعادة تغريد</span>
+    </div>
+      <span class="ProfileTweet-actionCount ProfileTweet-actionCount--isZero">
+    <span class="ProfileTweet-actionCountForPresentation" aria-hidden="true"></span>
+  </span>
+
+  </button><button class="ProfileTweet-actionButtonUndo js-actionButton js-actionRetweet" data-modal="ProfileTweet-retweet" type="button">
+    <div class="IconContainer js-tooltip" title="إلغاء إعادة التغريد">
+      <span class="Icon Icon--medium Icon--retweet"></span>
+      <span class="u-hiddenVisually">مُعاد تغريدها</span>
+    </div>
+      <span class="ProfileTweet-actionCount ProfileTweet-actionCount--isZero">
+    <span class="ProfileTweet-actionCountForPresentation" aria-hidden="true"></span>
+  </span>
+
+  </button>
+</div>
+
+
+    <div class="ProfileTweet-action ProfileTweet-action--favorite js-toggleState">
+  <button class="ProfileTweet-actionButton js-actionButton js-actionFavorite" type="button" aria-describedby="profile-tweet-action-favorite-count-aria-1074439401814532096">
+    <div class="IconContainer js-tooltip" title="تفضيل">
+      <span role="presentation" class="Icon Icon--heart Icon--medium"></span>
+      <div class="HeartAnimation"></div>
+      <span class="u-hiddenVisually">تفضيل</span>
+    </div>
+      <span class="ProfileTweet-actionCount ProfileTweet-actionCount--isZero">
+    <span class="ProfileTweet-actionCountForPresentation" aria-hidden="true"></span>
+  </span>
+
+  </button><button class="ProfileTweet-actionButtonUndo ProfileTweet-action--unfavorite u-linkClean js-actionButton js-actionFavorite" type="button">
+    <div class="IconContainer js-tooltip" title="إلغاء التفضيل">
+      <span role="presentation" class="Icon Icon--heart Icon--medium"></span>
+      <div class="HeartAnimation"></div>
+      <span class="u-hiddenVisually">معجب به</span>
+    </div>
+      <span class="ProfileTweet-actionCount ProfileTweet-actionCount--isZero">
+    <span class="ProfileTweet-actionCountForPresentation" aria-hidden="true"></span>
+  </span>
+
+  </button>
+</div>
+
+
+      <div class="ProfileTweet-action ProfileTweet-action--dm">
+    <button class="ProfileTweet-actionButton u-textUserColorHover js-actionButton js-actionShareViaDM" type="button" data-nav="share_tweet_dm">
+      <div class="IconContainer js-tooltip" title="رسالة خاصّة">
+        <span class="Icon Icon--medium Icon--dm"></span>
+        <span class="u-hiddenVisually">رسالة خاصّة</span>
+      </div>
+    </button>
+  </div>
+
+
+    
+
+  </div>
+
+</div>
+  
+
+
+
+      
+      
+
+      
+
+      
+
+    </div>
+
+  </div>
+
+</div>
+            <div class="tweet-button">
+                <span class="add-tweet-button">
+                 <button class="js-add-tweet EdgeButton EdgeButton--secondary EdgeButton--icon EdgeButton--medium js-tooltip" title="إضافة تغريدة جديدة" aria-label="إضافة تغريدة جديدة" data-placement="top" data-delay="150">
+  <span class="Icon Icon--add Icon--medium"></span>
+</button>
+
+                </span>
+              <button class="EdgeButton EdgeButton--primary retweet-action" type="button">
+                <span class="RetweetDialog-retweetActionLabel">
+                  إعادة تغريد
+                </span>
+                <span class="RetweetDialog-tweetActionLabel">
+                  تغريد
+                </span>
+              </button>
+            </div>
+          </div>
+        <div style="position: absolute; visibility: hidden;"><div><br></div></div></form>
+    </div>
+  <button type="button" class="modal-btn modal-close js-close" aria-controls="retweet-tweet-dialog-dialog" aria-describedby="retweet-tweet-dialog-body">
+  <span class="Icon Icon--close Icon--medium">
+    <span class="visuallyhidden">إغلاق</span>
+  </span>
+</button><div class="js-last-tabstop" tabindex="0"></div></div>
